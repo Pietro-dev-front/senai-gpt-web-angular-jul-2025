@@ -1,12 +1,12 @@
+<header></header>
 <main class="main-login">
     <div class="robo">
     </div>
-    <div class="login">
+    <div class="login" [formGroup]="loginForm">
         <img src="imgs/Chat.png" alt="Logo do SenaiGPT" class="logo-gpt">
         <h1 class="titulo-login">Login</h1>
-        <input type="text" class="input" placeholder="Insira o e-mail" id="usuario">
-        <input type="password" class="input" placeholder="Insira a senha" id="senha">
-        <button class="btn-login">Entrar</button>
+        <input type="text" class="input" placeholder="Insira o e-mail" id="email" formControlName="email">
+        <input type="password" class="input" placeholder="Insira a senha" id="senha" formControlName="password">
+        <button class="btn-login" (click)="onLoginClick()">Entrar</button>
     </div>
-
 </main>

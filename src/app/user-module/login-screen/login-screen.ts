@@ -1,62 +1,75 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginScreenService } from '../../service/login-screen-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-screen',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './login-screen.html',
   styleUrl: './login-screen.css'
 })
 export class LoginScreen {
 
+  emailErrorMessage: string;
+  passwordErrorMessage: string;
+  sucessLogin: string;
+  incorrectCredentials: string;
+
   isBotaoDesabilitado: boolean = false;
   loginForm: FormGroup;
-  
-  constructor(private fb: FormBuilder, private loginScreenService: LoginScreenService, ) {
+
+  constructor(private fb: FormBuilder, private loginScreenService: LoginScreenService,) {
     //quando a tela iniciar 
     this.loginForm = this.fb.group({
-      email: [" ",[Validators.required] ],
-      password: [" ", Validators.required]
+      email: ["", [Validators.required]],
+      password: ["", [Validators.required]],
+
     });
+
+    this.emailErrorMessage = "";
+    this.passwordErrorMessage = "";
+    this.sucessLogin = "";
+    this.incorrectCredentials = "";
   };
 
-  
-   habilitarBotao() {
-    this.isBotaoDesabilitado = false;
-  }
-  
-  desabilitarBotao() {
-    this.isBotaoDesabilitado = true;
-  }
+
+  // habilitarBotao() {
+  //   this.isBotaoDesabilitado = false;
+  // }
+
+  // desabilitarBotao() {
+  //   this.isBotaoDesabilitado = true;
+  // }
 
 
-  async onLoginClick(){
-
-   
+  async onLoginClick() {
 
     if (this.loginForm.value.email == "") {
-      alert("preencha o e-mail");
+      this.emailErrorMessage = "O campo de e-mail e obrigatorio.";
       return
     }
 
     if (this.loginForm.value.password == "") {
-      alert("preencha o password");
+      this.passwordErrorMessage = "O campo de senha e obrigatorio.";
       return
     }
-    
+
     console.log("Email", this.loginForm.value.email)
     console.log("Password", this.loginForm.value.password)
 
-    let response = await this.loginScreenService.getLoginScreen(this.loginForm.value.email.get('email'),this.loginForm.value.password.get('password'))
+    let response = await this.loginScreenService.getLoginScreen(this.loginForm.value.email, this.loginForm.value.password)
 
-    if(response.status === 200){
-      alert("sucesso no login")
-    }else{
-      alert("Error de api ")
+    if (response.status === 200) {
+      this.sucessLogin = "Logado com sucesso.";
+      return
+    } else {
+      this.incorrectCredentials = "Credenciais incorretas";
+      return
     }
+ 
 
-    console.log("STATUS CODE ", response.status)
+    // console.log("STATUS CODE ", response.status)
 
     //  let response = await fetch("https://senai-gpt-api.azurewebsites.net/login",{
     //   method: "POST",
@@ -71,5 +84,5 @@ export class LoginScreen {
 
   }
 
-   
+
 }

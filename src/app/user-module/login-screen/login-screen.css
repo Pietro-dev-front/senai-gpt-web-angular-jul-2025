@@ -62,3 +62,22 @@
     color: white;
     transform: scale(1)
 }
+.btn-login:disabled {
+    opacity: 0.5; /* Torna o botão semitransparente */
+    cursor: not-allowed; /* Muda o cursor para "não permitido" */
+    background-color: #ccc;
+
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    transform: translateY(-12px) translateX(-90px);
+}
+
+.message {
+    color: red;
+    font-size: 12px;
+    transform: translateY(-15px) translateX(-90px);
+
+}

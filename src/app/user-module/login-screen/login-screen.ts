@@ -70,7 +70,7 @@ export class LoginScreen {
       console.log("JSON", json)
       let meuToken = json.accessToken;
       let userId = json.user.id;
-      localStorage.setItem("meutoken", meuToken);
+      localStorage.setItem("meuToken", meuToken);
       localStorage.setItem("meuId",userId);
       window.location.href = "chat-screen"
     } else {

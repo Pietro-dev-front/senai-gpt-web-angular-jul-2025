@@ -5,9 +5,9 @@
     <div class="login" [formGroup]="loginForm">
         <img src="imgs/Chat.png" alt="Logo do SenaiGPT" class="logo-gpt">
         <h1 class="titulo-login">Login</h1>
-        <input type="text" class="input" placeholder="Insira o e-mail" [disabled]="isBotaoDesabilitado" id="email" formControlName="email">
+        <input type="text" class="input" placeholder="Insira o e-mail"  id="email" formControlName="email">
         <span *ngIf="emailErrorMessage != '' " class="error-message">{{emailErrorMessage}}</span>
-        <input type="password" class="input" placeholder="Insira a senha" [disabled]="isBotaoDesabilitado" id="senha" formControlName="password">
+        <input type="password" class="input" placeholder="Insira a senha"  id="senha" formControlName="password">
         <span *ngIf="passwordErrorMessage != '' " class="error-message">{{passwordErrorMessage}}</span>
         <button class="btn-login" [disabled]="isBotaoDesabilitado" (click)="onLoginClick()">Entrar</button>
         <span *ngIf="sucessLogin != '' " class="message">{{sucessLogin}}</span>

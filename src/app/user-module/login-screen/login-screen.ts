@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginScreenService } from '../../service/login-screen-service';
 import { CommonModule } from '@angular/common';
@@ -19,7 +19,7 @@ export class LoginScreen {
   isBotaoDesabilitado: boolean = false;
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private loginScreenService: LoginScreenService,) {
+  constructor(private fb: FormBuilder, private loginScreenService: LoginScreenService, private cd: ChangeDetectorRef,) {
     //quando a tela iniciar 
     this.loginForm = this.fb.group({
       email: ["", [Validators.required]],
@@ -44,6 +44,10 @@ export class LoginScreen {
 
 
   async onLoginClick() {
+    this.emailErrorMessage = "";
+    this.passwordErrorMessage = "";
+    this.sucessLogin = "";
+    this.incorrectCredentials = "";
 
     if (this.loginForm.value.email == "") {
       this.emailErrorMessage = "O campo de e-mail e obrigatorio.";
@@ -60,15 +64,22 @@ export class LoginScreen {
 
     let response = await this.loginScreenService.getLoginScreen(this.loginForm.value.email, this.loginForm.value.password)
 
-    if (response.status === 200) {
+    if (response.status === 200 && response.status <= 299) {
       this.sucessLogin = "Logado com sucesso.";
-      return
+      let json = await response.json();
+      console.log("JSON", json)
+      let meuToken = json.accessToken;
+      let userId = json.user.id;
+      localStorage.setItem("meutoken", meuToken);
+      localStorage.setItem("meuId",userId);
+      window.location.href = "chat-screen"
     } else {
       this.incorrectCredentials = "Credenciais incorretas";
-      return
     }
- 
 
+
+    
+    this.cd.detectChanges();
     // console.log("STATUS CODE ", response.status)
 
     //  let response = await fetch("https://senai-gpt-api.azurewebsites.net/login",{
@@ -83,6 +94,4 @@ export class LoginScreen {
     // });
 
   }
-
-
 }

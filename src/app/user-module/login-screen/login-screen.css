@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-*{
-    /* todos elementos */
-    margin: 0px; /*Remover margens externas*/
-    padding: 0px; /*Remover margens e paddings interna*/
-    box-sizing: border-box; /*Para que o padding e margin sejam calculados corretamente*/
-    font-family: "Inter"; /*Fonte Inter do Google Fonts*/
-}
 
 .main-login {
     display: flex; /*Flexbox para alinhar os itens*/

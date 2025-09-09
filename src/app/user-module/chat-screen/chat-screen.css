@@ -1,11 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
+.container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #fff;
   color: #333;
 }

@@ -1,0 +1,74 @@
+
+.main-login {
+    display: flex; /*Flexbox para alinhar os itens*/
+}
+
+.robo {
+    background-color: aquamarine;
+    background-image: url(/imgs/robo-login.png);
+    background-size: cover; /*Cobre todo o espaço disponível*/
+    width: 50vw; /*50 % do tamanho horizontal do monitor*/
+    height: 100vh; /*50% do tamanho vertical do monitor*/
+}
+
+.titulo-login {
+    font-size: 76px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.login {
+    width: 50vw; /*50 % do tamanho horizontal do monitor*/
+    height: 100vh; /*50% do tamanho vertical do monitor*/
+    display: flex; /*Flexbox para alinhar os itens*/
+    flex-direction: column; /*Coluna para alinhar os itens verticalmente*/
+    align-items: center; /*Alinha os itens no centro horizontalmente*/
+    justify-content: center; /*Alinha os itens no centro verticalmente*/
+}
+
+.logo-gpt {
+    height: 60px;
+}
+
+.input {
+    padding: 18px;
+    background-color: #f7f9fb;
+    width: 377px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+}
+
+.btn-login {
+    padding: 18px;
+    background-color: #0d0d0e;
+    border-radius: 10px;
+    width: 377px;
+    border: 1px solid #0d0d0e;
+    color:#ccc
+}
+
+.btn-login:hover{
+    background-color: blue;
+    color: white;
+    transform: scale(1)
+}
+.btn-login:disabled {
+    opacity: 0.5; /* Torna o botão semitransparente */
+    cursor: not-allowed; /* Muda o cursor para "não permitido" */
+    background-color: #ccc;
+
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    transform: translateY(-12px) translateX(-90px);
+}
+
+.message {
+    color: red;
+    font-size: 12px;
+    transform: translateY(-15px) translateX(-90px);
+
+}

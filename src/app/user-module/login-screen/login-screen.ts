@@ -20,7 +20,7 @@ export class LoginScreen {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private loginScreenService: LoginScreenService, private cd: ChangeDetectorRef,) {
-    //quando a tela iniciar 
+    //quando a tela iniciar
     this.loginForm = this.fb.group({
       email: ["", [Validators.required]],
       password: ["", [Validators.required]],
@@ -78,7 +78,6 @@ export class LoginScreen {
     }
 
 
-    
     this.cd.detectChanges();
     // console.log("STATUS CODE ", response.status)
 

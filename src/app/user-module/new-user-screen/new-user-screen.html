@@ -2,19 +2,18 @@
 <main class="main-login">
     <div class="robo">
     </div>
-    <div class="login" >
+    <div class="login" [formGroup]="newUserLoginForm">
         <img src="imgs/Chat.png" alt="Logo do SenaiGPT" class="logo-gpt">
         <h1 class="titulo-login">Novo usuario</h1>
-        <input type="text" class="input" placeholder="Insira o nome do usuario" id="nome" formControlName="nome">
-        <span  class="error-message"></span>
+        <input type="text" class="input" placeholder="Insira o nome do usuario" id="name" formControlName="name">
+        
         <input type="text" class="input" placeholder="Insira o e-mail"  id="email" formControlName="email">
-        <span  class="error-message"></span>
+       
         <input type="password" class="input" placeholder="Insira a senha"  id="senha" formControlName="password">
-        <span  class="error-message"></span>
+        
         <input type="password" class="input" placeholder="Confirme a senha"  id="confirme-senha" formControlName="newPassword">
-        <span  class="error-message"></span>
-        <button class="btn-login" (click)="onCadastro">Entrar</button>
-        <span  class="message"></span>
-        <span class="message"></span>
+      
+        <button class="btn-login" (click)="onCadastro()">Entrar</button>
+       
     </div>
 </main>

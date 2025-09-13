@@ -12,5 +12,9 @@
         <button class="btn-login" [disabled]="isBotaoDesabilitado" (click)="onLoginClick()">Entrar</button>
         <span *ngIf="sucessLogin != '' " class="message">{{sucessLogin}}</span>
         <span *ngIf="incorrectCredentials != ''  " class="message">{{incorrectCredentials}}</span>
+        <a href="new-user-screen">
+            Cadastrar novo usuario
+        </a>
+        
     </div>
 </main>

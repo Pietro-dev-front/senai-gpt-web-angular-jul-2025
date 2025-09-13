@@ -6,14 +6,17 @@
         <img src="imgs/Chat.png" alt="Logo do SenaiGPT" class="logo-gpt">
         <h1 class="titulo-login">Novo usuario</h1>
         <input type="text" class="input" placeholder="Insira o nome do usuario" id="name" formControlName="name">
-        
+        <span *ngIf="nameErrorMessage != '' " class="error-message">{{nameErrorMessage}}</span>
+
         <input type="text" class="input" placeholder="Insira o e-mail"  id="email" formControlName="email">
-       
+        <span *ngIf="emailErrorMessage != '' " class="error-message">{{emailErrorMessage}}</span>
         <input type="password" class="input" placeholder="Insira a senha"  id="senha" formControlName="password">
-        
+        <span *ngIf="passwordErrorMessage != '' " class="error-message">{{passwordErrorMessage}}</span>
         <input type="password" class="input" placeholder="Confirme a senha"  id="confirme-senha" formControlName="newPassword">
-      
-        <button class="btn-login" (click)="onCadastro()">Entrar</button>
-       
+        <span *ngIf="newPasswordErrorMessage != '' " class="error-message">{{newPasswordErrorMessage}}</span>
+
+        <button class="btn-login" (click)="onCadastro()">Cadastrar</button>
+        <span *ngIf="sucessLogin != '' " class="message">{{sucessLogin}}</span>
+        <span *ngIf="incorrectCredentials != ''  " class="message">{{incorrectCredentials}}</span>
     </div>
 </main>

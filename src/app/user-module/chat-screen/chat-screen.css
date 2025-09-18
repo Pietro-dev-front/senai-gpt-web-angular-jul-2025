@@ -1,219 +1,311 @@
-.container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #fff;
-  color: #333;
+* { 
+  box-sizing: border-box; 
 }
+.container{
+ display: flex;
+}
+.menu{
+ display: flex;
+ height: 100vh;
+ width:20% ;
+ background-color: rgb(255, 255, 255);
+ justify-content: space-between;
+ flex-direction: column;
+
+}
+
+.botao {
+    background-color: black;        /* Fundo preto */
+    color: white;                   /* Texto branco */
+      padding-left: 20px;         /* Espaçamento interno */
+    border: none;                   /* Sem borda */
+    border-radius: 2px;             /* Cantos arredondados */
+    width: 100%;                    /* Ocupa a largura disponível */
+    font-size: 16px;                /* Tamanho da fonte */
+    font-weight: bold;             /* Texto em negrito */
+    cursor: pointer;                /* Muda cursor ao passar o mouse */
+    text-align: center;             /* Centraliza o texto */
+    display: flex;                  /* Flex para centralizar com precisão */
+    justify-content: center;       /* Centraliza horizontalmente */
+    align-items: center;           /* Centraliza verticalmente */
+    transition: background-color 0.3s ease;
+    height: 20%;
+    
+}
+
+.botao:hover {
+    background-color: #222;         /* Cor mais clara ao passar o mouse */
+}
+.botao2{    
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    justify-content: center;
+    margin-top: 10px;
+     padding-left: 20px;
+   background-color: #FFFFFF;
+   border: none;
+}
+
+.centralpainel{
+
+ height: 100vh;
+ width:80% ;
+ background-color: #ffffff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+justify-content: center;
+padding-bottom: 24px;
+
+}
+.logo{ 
+    margin-top: 30px;
+    width: 40%;
+    height: 20%;
+    background-image: url("/imgs/Chat.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 10vh;
+}
+.boxes-row{ 
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 15px;
+   
+}
+.top{   
+    width:  100%; 
+    min-height: 300px;
+    background-color:rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items:flex-start ;
+    
+
+}
+.bottom{    
+    width: 100%;
+    min-height: 300px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    margin-top: 10px;
+      
+    align-items: flex-start;
+}
+.bottom-debaixo{ 
+      padding-left: 20px;
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border: none;
+}
+.bottom-debaixo2{ 
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    text-align: left;
+   border: none;
+    padding-left: 20px;
+}
+
+.box1{  
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+
+.icone-coluna {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+.box2{  
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+   
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+.box3{  
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    align-items: flex-start;
+    
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+.span{  
+    font-size: larger;
+}
+.item-coluna {
+    background: #f7f7f8;
+    border-radius: 6px;
+    padding: 12px 10px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    text-align: left;
+    color: #333;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    width: 100%;
+}
+
+.titulo-meio {
+    align-self: center;   /* Centraliza só o título */
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+}
+.icone-coluna1 {
+    width: 300px;
+    height: 300px;
+    display: block;
+}
+.form-area {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o formulário horizontalmente */
+    margin-top: auto;        /* Empurra o formulário para o final da main */
+    margin-bottom: 16px;     /* Espaço do fundo */
+}
+.chat-input-area {
+    width: 60%;
+    display: flex;
+    background: #f7f7f8;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 8px 16px;
+    align-items: center;
+    padding: 10px;
+}
+
+.chat-input-area i{
+    margin-right: 10px;}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 8px;
+    outline: none;
+}
+
+.chat-send-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+    margin-left: 8px;
+}
+.titulo-meio2 {
+    align-self: center;   /* Centraliza só o título */
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+   
+}
+
+.titulo-meio2 i{  
+  font-size: 32px;
+  margin-top: 7px;
+  
+}
+/* Botão "+New Chat" estilizado */
+.new-chat-btn {
+    display: flex;                  /* Flexbox para centralizar texto */
+    justify-content: center;        /* Centraliza horizontal */
+    align-items: center;            /* Centraliza vertical */
+    padding: 10px 20px;             /* Ajusta tamanho sem ocupar 100% */
+    margin-bottom: 10px;            /* Mesma margem dos outros botões */
+    background-color: black;        /* Fundo preto */
+    color: white;                   /* Texto branco */
+    border: none;                   /* Sem borda */
+    border-radius: 10px;            /* Bordas arredondadas */
+    font-size: 16px;                /* Tamanho da fonte */
+    font-weight: bold;              /* Negrito */
+    cursor: pointer;                /* Cursor mão */
+    transition: background-color 0.3s ease;
+    width: 85%;
+    height: 20%;                    /* Ajusta à largura do conteúdo */
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.new-chat-btn:hover {
+    background-color: #222;         /* Cor ao passar mouse */
+}
+
 .chat-container {
-  width: 20%;
-  background: #f7f7f8;
-  border-right: 1px solid #ddd;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-}
-.chat-container button {
-  width: 100%;
-  padding: 10px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-.chat-container a {
-  list-style: none;
-}
-.chat-container a {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #444;
-}
-.chat-container a:hover {
-  color: #000;
-  justify-content: center;
-}
-.new-chat {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: right;
-}
-.btn-chat {
-  width: 100%;
-  background-color: transparent;
-  padding: 10px;
-  color: #fff;
-  border: none;
-  margin-bottom: 10px;
-  text-align: center;
- 
-}
-.footer a {
-  margin: 10px 0;
-  font-size: 14px;
-}
-.footer a:hover {
-  color: #000;
-  justify-content: center;
-}
-.footer {
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 80%;
-  padding-left:119px ;
-  padding-right: 119px;
-  flex-direction: column;
-}
-.foto-chat {
-  width: 446px;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  margin-bottom: 80px;
-  margin-top: 100px;
+  align-items: flex-start;
+  width: 80vw;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  /* Para corrigir o bug que acontece quando há muitas mensagens no chat */
+  height: 90dvh;
+  overflow: auto;
+
 }
 
-.chat-box {
+.chat-header {
+
+  margin-bottom: 20px;
+
+}
+
+.chat-messages {
+
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  gap: 10px;
+
+}
+
+.chat-container .message-item {
+
+  background-color: #ccc;
+  border-radius: 12px 12px 0 12px;
   padding: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-bottom: 20px;
+
 }
 
-.examples {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; 
-  
-}
-.examples p {
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #f7f9fb;
-  cursor: pointer;
-}
-.examples h2  {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #000;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
-.copabilities {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; 
-  
-}
-.copabilities p {
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #f7f9fb;
-  cursor: pointer;
-}
-.copabilities h2 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #000;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-}
+.chat-container .message-item.chatbot {
 
-.limitations {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  background-color: #ccc;
+  border-radius: 12px 12px 12px 0px;
+  padding: 20px;
+  width: 300px;
+  margin-left: unset;
+  color: white;
+  background: #000;
 
-.limitations h2 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #000;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
 }
-
-.limitations p {
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-  background-color: #f7f9fb;
-}
-.input-bar {
-  width: 100%;
-  display: flex;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top:auto;
-  align-items: flex-end;
-}
-
-.input-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-
-.input-bar button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-}
-.input-bar i {
-  color: #000;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.new-chat i {
-  font-size: 12px;
-  color: #000;
-  margin-right: 10px;
-}
-
-.footer i {
-  font-size: 12px;
-  color: #000;
-  margin-right: 10px;
-}
-
-.title-icons {
-  margin-bottom: 5px;
-  font-size: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title-icons i {
-  font-size: 20px;
-  color: #000;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-

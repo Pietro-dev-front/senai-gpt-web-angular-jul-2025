@@ -1,102 +1,121 @@
-<div class="container">
-    <aside class="menu">
-        <div class="top">
+<div class="page-container">
 
-            <button class="new-chat-btn">+New Chat</button>
+    <aside class="side-bar">
+        <div class="menu-top">
+            <button class="button">+ New chat</button>
 
             @for (chat of chats; track $index){
-                <button class="botao2" (click)="onChatClick(chat)" cursor:pointer>
-                    <i class="fa-solid fa-message"></i>
-                    {{ chat.chatTitle }}
-                </button>
+            <button class="btn" (click)="onChatClick(chat)">
+                <i class="fa-solid fa-trash-can"></i>
+                {{ chat.chatTitle }}
+            </button>
             }
 
-            
+
+        </div>
+        <div class="menu-down">
+            <a href=""><i class="fa-solid fa-trash-can"></i> Clear conversations</a>
+            <a href=""><i class="fa-regular fa-sun"></i>Light mode</a>
+            <a href=""><i class="fa-solid fa-user"></i>My account</a>
+            <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i>Updates & FAQ</a>
+            <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
 
         </div>
 
-
-            <div class="bottom">
-                <button class="bottom-debaixo">
-                    <i class="fa-solid fa-trash-can"></i>
-                    Clear conversations</button>
-                <button class="bottom-debaixo2">
-                    <i class="fa-solid fa-moon"></i>
-                    Dark Mode</button>
-                <button class="bottom-debaixo2">
-                    <i class="fa-solid fa-user"></i>
-                    My account</button>
-                <button class="bottom-debaixo2">
-                    <i class="fa-solid fa-share-from-square"></i>
-                    Updates &FAQ</button>
-                <button class="bottom-debaixo2">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    Log Out</button>
-            </div>
 
     </aside>
 
-    <main class="centralpainel">
-      @if (chatSelecionado == null) {
-         <div class="logo"></div>
-        <div class="boxes-row">
-            <div class="box1">
-                <img src="imgs/IconSet.svg" alt="Ícone Examples" class="icone-coluna">
-                <h2 class="titulo-meio">Example</h2>
-                <div class="item-coluna">"Explain quantum computing in simple terms"</div>
-                <div class="item-coluna">"Got any creative ideas for a 10 year old's birthday?"</div>
-                <div class="item-coluna">"How do I make an HTTP request in Javascript"</div>
-            </div>
-            <div class="box2">
-                <img src="imgs/IconSet1.svg" alt="Icone Caoabilities" class="icone-coluna">
-                <h2 class="titulo-meio">Capabilities</h2>
-                <div class="item-coluna">"Remembers what user said earlier in the conversation."</div>
-                <div class="item-coluna">"Allows user to provide follow-up corrections."</div>
-                <div class="item-coluna">"Trained to decline inappropriate requests."</div>
-            </div>
-            <div class="box3">
+    <main class="central-panel">
+
+        @if (chatSelecionado == null) {
+
+        <div class="logo"></div>
+
+        <div class="dicas-container">
 
 
-                <h2 class="titulo-meio2">
-                    <i class="fa-solid fa-shield"></i>
-
+            <div class="dicas-item">
+                <h2>
+                    <i class="fa-regular fa-comments"></i>
+                    Examples
                 </h2>
-                <h2 class="titulo-meio"> Limitations </h2>
 
-
-                <div class="item-coluna">"May occasionally generate incorrect information."</div>
-                <div class="item-coluna">"May occasionally produce harmful instructions or biased content."</div>
-                <div class="item-coluna">Limited knowledge of world and events after 2021."</div>
+                <p>"Explain quantum computing insimple terms"</p>
+                <p>"Got any creative ideas for a 10year old's birthday?"</p>
+                <p>"How do I make an HTTP requestin Javascript?"</p>
             </div>
-        </div>
-      }
 
-      @if (chatSelecionado != null) {
+            <div class="dicas-item">
+                <h2>
+                    <i class="fa-regular fa-star"></i>
+                    Capabilities
+                </h2>
+
+                <p>"Remembers what user saidearlier in the conversation."</p>
+                <p>"Allows user to provide follow-up corrections."</p>
+                <p>"Trained to decline inappropriate requests."</p>
+            </div>
+
+            <div class="dicas-item">
+                <h2>
+                    <i class="fa-solid fa-user-shield"></i>
+                    Limitations
+                </h2>
+
+                <p>"May occasionally generate incorrect information."</p>
+                <p>"May occasionally produce harmful instructions or biased content."</p>
+                <p>"Limited knowledge of world andevents after 2021."</p>
+            </div>
+
+        </div>
+
+        }
+
+        @if (chatSelecionado != null) {
 
         <div class="chat-container">
-          <div class="chat-header">
-            <h2>{{chatSelecionado.chatTitle}}</h2>
-          </div>
-          <div class="chat-messages">
-            @for (msg of mensagens; track $index) {
-                <p class="message-item" [class.chatbot]="msg.userId == 'chatbot'"> {{msg.text}}</p>
-            }
-          </div>
+
+            <div class="chat-header">
+                <h2>
+                    {{ chatSelecionado.chatTitle }}
+                </h2>
+
+            </div>
+
+            <div class="chat-messages">
+                @for (msg of messages; track $index){
+                <p class="message-item" [class.chatbot]="msg.userId == 'chatbot'">{{ msg.text }}</p>
+
+                }
+            </div>
+
 
         </div>
+        }
 
-      }
-       
-        <div class="form-area">
-            <form class="chat-input-area">
-                <i class="fa-solid fa-microphone"></i>
+        <div class="message">
+
+
+            <button>
                 <i class="fa-solid fa-image"></i>
-                <input [formControl]="mensagemUsuario" type="text" class="chat-input" placeholder="Type message">
+            </button>
 
-                <button type="submit" class="chat-send-btn">
-                    <i class="fa-regular fa-paper-plane" (click)="enviarMensagem()"></i>
-                </button>
-            </form>
+            <input [formControl]="userMessage" type="text" placeholder="Type your message">
+            <button>
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-paper-plane" (click)="sendMessage()"></i>
+            </button>
+
+
+
+
+
         </div>
+
     </main>
+
+
 </div>

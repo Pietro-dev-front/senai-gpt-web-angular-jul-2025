@@ -1,261 +1,163 @@
-* { 
-  box-sizing: border-box; 
-}
-.container{
- display: flex;
-}
-.menu{
- display: flex;
- height: 100vh;
- width:20% ;
- background-color: rgb(255, 255, 255);
- justify-content: space-between;
- flex-direction: column;
 
-}
-
-.botao {
-    background-color: black;        /* Fundo preto */
-    color: white;                   /* Texto branco */
-      padding-left: 20px;         /* Espaçamento interno */
-    border: none;                   /* Sem borda */
-    border-radius: 2px;             /* Cantos arredondados */
-    width: 100%;                    /* Ocupa a largura disponível */
-    font-size: 16px;                /* Tamanho da fonte */
-    font-weight: bold;             /* Texto em negrito */
-    cursor: pointer;                /* Muda cursor ao passar o mouse */
-    text-align: center;             /* Centraliza o texto */
-    display: flex;                  /* Flex para centralizar com precisão */
-    justify-content: center;       /* Centraliza horizontalmente */
-    align-items: center;           /* Centraliza verticalmente */
-    transition: background-color 0.3s ease;
-    height: 20%;
-    
-}
-
-.botao:hover {
-    background-color: #222;         /* Cor mais clara ao passar o mouse */
-}
-.botao2{    
-    width: 100%;
-    height: 40px;
-    text-align: left;
-    justify-content: center;
-    margin-top: 10px;
-     padding-left: 20px;
-   background-color: #FFFFFF;
-   border: none;
-}
-
-.centralpainel{
-
- height: 100vh;
- width:80% ;
- background-color: #ffffff;
- display: flex;
- flex-direction: column;
- align-items: center;
-justify-content: center;
-padding-bottom: 24px;
-
-}
-.logo{ 
-    margin-top: 30px;
-    width: 40%;
-    height: 20%;
-    background-image: url("/imgs/Chat.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 10vh;
-}
-.boxes-row{ 
+.page-container{
+    width: 100vw;/*Largura da tela*/
+    height:100vh;/*Altura da tela*/
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin-top: 15px;
-   
 }
-.top{   
-    width:  100%; 
-    min-height: 300px;
-    background-color:rgb(255, 255, 255) ;
+
+.side-bar{
+    width: 310px;
+    height: 100vh;
     display: flex;
-    justify-content: center; 
     flex-direction: column;
-    align-items:flex-start ;
-    
+    justify-content: space-between;
+    border-right: 1px solid #1C1C1C1A ;
+    margin-top: 16px;
+    padding: 20px;
+}
+.menu-top{
+    width: 282px;
+    height: 236px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: left;
+    font-size: 14px;
+ }
 
-}
-.bottom{    
-    width: 100%;
-    min-height: 300px;
-    background-color: rgb(255, 255, 255);
-    border: none;
-    margin-top: 10px;
-      
-    align-items: flex-start;
-}
-.bottom-debaixo{ 
-      padding-left: 20px;
-    width: 100%;
-    height: 40px;
-    text-align: left;
-    background-color: #FFFFFF;
-    border: none;
-}
-.bottom-debaixo2{ 
-    margin-top: 10px;
-    width: 100%;
-    height: 40px;
-    background-color: #FFFFFF;
-    text-align: left;
-   border: none;
+ .menu-top a {
+    text-decoration: none;
+    color: black;
+    margin-top: 16px;
+    margin-left: 20px;
+ }
+
+ .menu-down{
+    width: 282px;
+    height: 236px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: left;
+    font-size: 14px;
+    
+ }
+
+ .menu-down a{
+    text-decoration: none;
+    color: black;
+    margin-bottom: 4px;
+    margin-top: 16px;
     padding-left: 20px;
-}
+ }
 
-.box1{  
-    width: 300px;
-    height: 350px;
-    background-color: rgb(255, 255, 255);
-    align-items: flex-start;
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-}
-
-.icone-coluna {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 8px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-}
-.box2{  
-    width: 300px;
-    height: 350px;
-    background-color: rgb(255, 255, 255);
-    align-items: flex-start;
-   
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-}
-.box3{  
-    width: 300px;
-    height: 350px;
-    background-color: rgb(255, 255, 255);
-    align-items: flex-start;
-    
-   text-align: center;
-   display: flex;
-   flex-direction: column;
-}
-.span{  
-    font-size: larger;
-}
-.item-coluna {
-    background: #f7f7f8;
-    border-radius: 6px;
-    padding: 12px 10px;
-    margin-bottom: 12px;
-    font-size: 1rem;
-    text-align: left;
-    color: #333;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    width: 100%;
-}
-
-.titulo-meio {
-    align-self: center;   /* Centraliza só o título */
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    width: 100%;
-}
-.icone-coluna1 {
-    width: 300px;
-    height: 300px;
-    display: block;
-}
-.form-area {
-    width: 100%;
+ .button{
+    background-color:#000000;
+    width: 242px;
+    height: 40px;
+    color: #fffefe;
     display: flex;
-    justify-content: center; /* Centraliza o formulário horizontalmente */
-    margin-top: auto;        /* Empurra o formulário para o final da main */
-    margin-bottom: 16px;     /* Espaço do fundo */
+    border-radius: 10px;
+    font-size: 18px;
+    align-items:  center;
+    justify-content: center;
+ 
 }
-.chat-input-area {
-    width: 60%;
-    display: flex;
-    background: #f7f7f8;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    padding: 8px 16px;
+
+.central-panel{
+    width: 100vw;/*Largura da tela*/
     align-items: center;
-    padding: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.chat-input-area i{
-    margin-right: 10px;}
+.logo{
+    background-image: url("/imgs/Chat.png");
+    width: 446px;
+    height: 101px;
+    background-size: cover;
+    margin-bottom: 16px;
 
-.chat-input {
+}
+
+.dicas-container{
+    display: flex;
+    margin-top: 20px;
+    max-width: 75%;
+}
+
+
+.dicas-item{
+
+    margin-right: 40px;
+    display:  flex;
+    flex-direction: column;
+    align-items:  center;
+
+}
+
+
+.dicas-item p {
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    background-color: #F7F9FB;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+.dicas-item h2 {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    }
+
+.message{
+    height: 40px;
+    width: 40%;
+    margin-top: 70px;
+    display: flex;
+    gap: 15px;
+    align-items:  center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #F7F9FB
+
+
+
+}
+
+.message button{
+    background: none;
+    border:  none;
+    cursor: pointer;
+    font-size: 18px;
+
+
+
+
+}
+
+.message input{
     flex: 1;
+    background: none;
     border: none;
-    background: transparent;
-    font-size: 1rem;
-    padding: 8px;
     outline: none;
 }
 
-.chat-send-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #888;
-    margin-left: 8px;
-}
-.titulo-meio2 {
-    align-self: center;   /* Centraliza só o título */
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    width: 100%;
-   
-}
-
-.titulo-meio2 i{  
-  font-size: 32px;
-  margin-top: 7px;
-  
-}
-/* Botão "+New Chat" estilizado */
-.new-chat-btn {
-    display: flex;                  /* Flexbox para centralizar texto */
-    justify-content: center;        /* Centraliza horizontal */
-    align-items: center;            /* Centraliza vertical */
-    padding: 10px 20px;             /* Ajusta tamanho sem ocupar 100% */
-    margin-bottom: 10px;            /* Mesma margem dos outros botões */
-    background-color: black;        /* Fundo preto */
-    color: white;                   /* Texto branco */
-    border: none;                   /* Sem borda */
-    border-radius: 10px;            /* Bordas arredondadas */
-    font-size: 16px;                /* Tamanho da fonte */
-    font-weight: bold;              /* Negrito */
-    cursor: pointer;                /* Cursor mão */
-    transition: background-color 0.3s ease;
-    width: 85%;
-    height: 20%;                    /* Ajusta à largura do conteúdo */
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.new-chat-btn:hover {
-    background-color: #222;         /* Cor ao passar mouse */
+.btn {
+    display: flex;
+background: none;
+border: none;
+margin-left: 20px;
+margin-top: 20px;
 }
 
 .chat-container {

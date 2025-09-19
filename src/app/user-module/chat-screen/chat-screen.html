@@ -2,7 +2,7 @@
 
     <aside class="side-bar">
         <div class="menu-top">
-            <button class="button">+ New chat</button>
+            <button class="button"(click)="novoChat()">+ New chat</button>
 
             @for (chat of chats; track $index){
             <button class="btn" (click)="onChatClick(chat)">
@@ -72,6 +72,7 @@
         }
 
         @if (chatSelecionado != null) {
+            <!-- //so vai ser executado quando o usuario tiver clicado em um chat -->
 
         <div class="chat-container">
 
@@ -91,8 +92,6 @@
 
 
         </div>
-        }
-
         <div class="message">
             <button aria-label="Send image">
                 <i class="fa-solid fa-image"></i>
@@ -107,5 +106,6 @@
                 <i class="fa-solid fa-paper-plane" (click)="sendMessage()"></i>
             </button>
         </div>
+        }
     </main>
 </div>

@@ -23,6 +23,7 @@
     flex-direction: column;
     align-items: left;
     font-size: 14px;
+    overflow: auto;
  }
 
  .menu-top a {

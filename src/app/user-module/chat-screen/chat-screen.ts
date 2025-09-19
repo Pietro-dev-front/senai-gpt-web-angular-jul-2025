@@ -24,6 +24,7 @@ interface IMessages {
   templateUrl: './chat-screen.html',
   styleUrl: './chat-screen.css'
 })
+
 export class ChatScreen {
 
   chats: IChat[];
@@ -134,5 +135,31 @@ export class ChatScreen {
     }));
           await this.onChatClick(this.chatSelecionado);
           this.userMessage.setValue("");
+  }
+
+  async novoChat() {
+
+    const nomeChat = prompt("Digite o nome do novo chat : ")
+
+    if (!nomeChat) {
+      // caso o usuario deixe o campo vazio 
+      alert("Nome invalido.");
+      return 
+    }
+
+    const novoChatObj = {
+      chatTitle: nomeChat,
+      userId: localStorage.getItem("meuId"),
+      //id back end que gera 
+    }
+
+    let novoChatResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/chats", novoChatObj, {
+      headers: {
+        "content-type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("meuToken")
+      },
+    }));
+
+    
   }
 }

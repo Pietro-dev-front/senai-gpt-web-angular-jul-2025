@@ -94,28 +94,18 @@
         }
 
         <div class="message">
-
-
-            <button>
+            <button aria-label="Send image">
                 <i class="fa-solid fa-image"></i>
             </button>
 
             <input [formControl]="userMessage" type="text" placeholder="Type your message">
-            <button>
+            <button aria-label="Send voice message">
                 <i class="fa-solid fa-microphone"></i>
             </button>
 
-            <button>
+            <button aria-label="Send message">
                 <i class="fa-solid fa-paper-plane" (click)="sendMessage()"></i>
             </button>
-
-
-
-
-
         </div>
-
     </main>
-
-
 </div>

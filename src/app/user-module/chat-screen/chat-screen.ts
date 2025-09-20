@@ -43,17 +43,21 @@ export class ChatScreen {
     this.getChats();
 
   }
-
+ //
   async getChats() {
     let response = await firstValueFrom(this.http.get("https://senai-gpt-api.azurewebsites.net/chats", {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
       }
-    }))
+    })) as IChat[];
 
     if (response) {
+
+      console.log("Chats", response);
+      let userId = localStorage.getItem("meuId");
+      response = response.filter(chat => chat.userId == userId)
       this.chats = response as [];
-      console.log("Chats", this.chats);
+      
     } else {
       console.log("Chat", response)
     }
@@ -158,8 +162,22 @@ export class ChatScreen {
         "content-type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
       },
-    }));
+    })) as IChat;
 
-    
+    await this.getChats();
+    await this.onChatClick(novoChatResponse);
   }
+
+  deslogar() {
+    //jeito 1 
+    localStorage.removeItem("meuToken");
+    localStorage.removeItem("meuId");
+
+    //jeito 2
+    localStorage.clear();
+
+    window.location.href = "login";
+  }
+
+
 }
